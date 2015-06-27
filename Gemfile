@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+# some changes
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 gem 'bootstrap-sass'
@@ -9,6 +9,8 @@ gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'jquery-rails'
+gem 'turbolinks'
+
 
 group :development, :test do
   gem 'sqlite3'
