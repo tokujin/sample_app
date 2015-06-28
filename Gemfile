@@ -38,6 +38,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 group :test do
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'factory_girl_rails'
   gem 'cucumber-rails'
   gem 'database_cleaner'
