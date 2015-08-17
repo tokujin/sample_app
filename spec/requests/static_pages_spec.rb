@@ -1,43 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe "Static Pages", type: :request do
-
-  subject {page}
+  subject { page }
 
   describe "Home page" do
     before {visit root_path}
-
-    it "should have the content 'Sample App'" do
-      visit '/static_pages/home'
-      expect(page).to have_selector('h1', text: 'Sample App')
-    end
-
-    it "should have the right title" do
-      visit '/static_pages/home'
-      expect(page).to have_selector('title',
-                      text: "Ruby on Rails Tutorial Sample App", :visible => false)
-    end
-
-    it "should not have custom page title" do
-      visit '/static_pages/home'
-      expect(page).not_to have_selector('title',
-                      text: "| Home", :visible => false)
-    end
-
+    it {should have_selector('h1', text: 'Sample App')}
+    it {should have_selector('title',
+                    text: full_title(''), visible: false)}
+    it {should have_selector('title',
+                    text: "| Home", visible: false)}
   end
 
   describe "Help page" do
     before {visit help_path}
-    it "should have the content 'Help page'" do
-      visit help_path
-      expect(page).to have_selector('h1', text: 'Help page')
-    end
-    it "should have the right title" do
-      visit help_path
-      expect(page).to have_selector('title',
-                      text: "Ruby on Rails Tutorial Sample App | Help", :visible => false)
-
-    end
+    it {should have_selector('h1', text: 'Help page')}
+    it {should have_selector('title',
+                    text: full_title('Help'), visible: false)}
   end
 
   describe "About page" do
